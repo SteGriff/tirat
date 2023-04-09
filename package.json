@@ -1,0 +1,25 @@
+{
+    "name": "this-is-that",
+    "version": "0.0.1",
+    "description": "A simple Node/SQLite app to map one set of values to another",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "sqlite3": "^4.1.1"
+    },
+    "engines": {
+      "node": "12.x"
+    },
+    "repository": {
+      "url": "https://glitch.com/edit/#!/this-is-that"
+    },
+    "license": "MIT",
+    "keywords": [
+      "node",
+      "glitch",
+      "express"
+    ]
+  }
