@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        This ➡ That
+      </h1>
+    </header>
+
+    <main>
+      <form>
+        <label>I call it:<input name="myId" aria-label="My ID" type="text" maxlength="36" placeholder="guid"></label>
+        <label>You call it:<input name="yourId" aria-label="Your ID" type="text" maxlength="36" placeholder="something"></label>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+      <section class="ids">
+        <ul id="ids"></ul>
+      </section>
+    </main>
+
+  </body>
+</html>

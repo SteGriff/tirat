@@ -4,22 +4,25 @@
     "description": "A simple Node/SQLite app to map one set of values to another",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+        "start": "nodemon server.js"
     },
     "dependencies": {
-      "express": "^4.17.1",
-      "sqlite3": "^4.1.1"
+        "express": "^4.18.2",
+        "sqlite3": "^5.1.6"
     },
     "engines": {
-      "node": "12.x"
+        "node": "16.x"
     },
     "repository": {
-      "url": "https://glitch.com/edit/#!/this-is-that"
+        "url": "https://glitch.com/edit/#!/this-is-that"
     },
     "license": "MIT",
     "keywords": [
-      "node",
-      "glitch",
-      "express"
-    ]
-  }
+        "node",
+        "glitch",
+        "express"
+    ],
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    }
+}

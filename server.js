@@ -1,18 +1,13 @@
 // server.js
 // where your node app starts
 
-// init project
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const fs = require("fs");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-// we've started you off with Express,
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-// http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
 // init sqlite db
@@ -40,16 +35,12 @@ const setup = () => {
 // if ./.data/sqlite.db does not exist, create it, otherwise print records to console
 db.serialize(setup);
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  if (!exists) {
-    setup();
-  }
-  response.sendFile(`${__dirname}/views/index.html`);
+app.get("/", (_, response) => {
+  response.sendFile(`${__dirname}/views/index.htm`);
 });
 
 // Get all IDs
-app.get("/ids", (request, response) => {
+app.get("/ids", (_, response) => {
   db.all("SELECT * from IdMap", (err, rows) => {
     response.send(JSON.stringify(rows));
   });
@@ -81,6 +72,6 @@ const cleanseString = function (string) {
 };
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, () => {
+var listener = app.listen(process.env.PORT || 65432, () => {
   console.log(`Your app is listening on port ${listener.address().port}`);
 });
