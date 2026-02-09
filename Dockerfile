@@ -1,4 +1,4 @@
-FROM node:latest AS base
+FROM node:24-slim AS base
 
 # Node.js app lives here
 WORKDIR /app
