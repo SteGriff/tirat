@@ -9,10 +9,6 @@ ENV NODE_ENV="production"
 # Build in a throwaway, to reduce size of final image
 FROM base AS build
 
-# Install packages needed to build node modules (?) maybe on slim
-RUN apt-get update -qq 
-RUN apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
-
 # Install node modules
 COPY ./package.json .
 COPY ./package-lock.json .
