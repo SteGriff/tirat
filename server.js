@@ -48,8 +48,8 @@ app.get("/ids", (_, response) => {
 
 // Add a mapped ID
 app.post("/id", (request, response) => {
-  const myId = cleanseString(request.body.myId);
-  const yourId = cleanseString(request.body.yourId);
+  const myId = request.body.myId;
+  const yourId = request.body.yourId;
   console.log(`Write ${myId} -> ${yourId}`);
 
   db.run(
@@ -65,11 +65,6 @@ app.post("/id", (request, response) => {
     }
   );
 });
-
-// helper function that prevents html/css/script malice
-const cleanseString = function (string) {
-  return string.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-};
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 3000, () => {
